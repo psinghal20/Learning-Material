@@ -1,0 +1,90 @@
+To setup git we need to first pass on user name and email this can be done by the help of the command 
+		 git config --global user.name "username"
+		 git config --global user.email "email"	
+
+To create a repository using bash first navigate to the folder that you want to create a git repository into and then use the command
+      git init
+      - it will initialize the the current directory as git directory
+the git actually track our project by creating some hidden file
+
+what we do during commit is like we are saving the current state of the project 
+
+git log  : shows us the history of all the commits that we have done.
+git log --pretty=oneline    :  This command shows the gitlog in a very shrink manner giving only important details
+if we want to see only those commit done by a particular user we use     git log --author="DEEPESH"
+for more on git type    :   git log --help
+
+git status -: tell us the status of the projects after the last commit. Weather there are changes to be commited or to be added etc.
+
+staging area is the area that tells these are the changes to be commited.
+
+git add filename  :  Is used for adding the changes to the staging area.
+
+git add .   : add all the files in the repository to the staging area.
+if we never want to add a certain file to the staging area  we actually use the file gitignore that tells us which files to ignore for the staging purpose
+	first we creeate the .gitignore file using the touch command inside which using a text editor we write the names of the file that are to be excluded during the staging process.
+	but still we need to add and commit the .gitignore file.
+
+
+git commit -m "quoted text "   :  commiting the given state of the repository.
+
+git diff   : this shows the differnce in the current working directory and the repository(last commit). If more then one fie is modified then it will actually show the diffrence one by one. If git diff is used during the staging area then there will be no differences shown. to get the differences bw the working directory and the staging area we actually use a different command that is    :  git diff --staged
+
+git rm filename    :  this actually deletes  the file not only from the working directory but also from the repository. 
+
+When we rename the file in the working directory what actually git think is we deleted the old named file and then added the new named file with the same content.
+
+git commit -am "messege"  :   This command directly commits to the repository without even adding them.
+
+git checkout -- <filename>     :  Take something from the reppository and make it our working directory.
+
+git reset HEAD <file name>  :  Remove the given file from the staging area and moves it to the working directory.
+
+commit in git actually represents a point of time in the time line of the git
+
+git checkout  <commit id we want to go>  -- <filename>   : This commit actually takes us back to the commit whose id  is given . The id can be identified withi the help of the command git log. Or simply it help us to get an old version from the repository of our file.
+
+git branch <name of branch>  :  used to create a new branch
+git checkout <name of the branch>     :  for switching to the branch from our current position to the name of the branch writtern
+
+for merging one branch to the other forst we must be in the destination branch which we can see by using a git status command  
+git merge <source branch>  :  is used for merging the branches
+
+sometimes while merging a merge conflict may arise we can see it using git status.
+we have to remove the merge conflict manually by going to the file and deleting the text git have automaticcally added and then saving the changes manually that we want.
+or we might configure the merge tool so that we can resolve the merge conflict atomatically.
+
+Whenever we checkout to the master branch it redirect us automatically to the latest commit in the master branch
+
+we can add tags to the different versions of the project that is giving taga to the various commits.
+git tag <tagname>  :   this assign the tag to the commit that we are currently working upon 
+for providing tag to any of the parent commit we need to chckout into that directory 
+for seeing the tags that we have added the command is    :    git tag
+
+REVERTING the changes in the repository:
+if the changes have not been staged yet the we use :   git checkout   : which takes us to the last commit from which we have proceded.
+git checkout whie using with sttaged changes do nothing 
+
+for reverting the changes that we have staged we use the command     :  git reset HEAD <file>   : after unstaging the changes we can use the above command for the reversion of the changes
+using this command it only reseets the staging area to whatever is in the HEAD
+The reset command (by default) doesn’t change the working directory. So the working directory still has the unwanted comment in it
+
+
+GITHUB:
+  git hub allows to make public projects. It help us to publish our projects worldwide
+
+for pushing or pulling a file from github we first need to set a remote.for setting up a remote we use the command  
+ :   git remote add <alias to url > <url>   for adding this remote we must need to be in the working directory of the git.
+ 											addding a remote means we have just connected it to our github account but our changes are not there till now
+
+git remote    :   help us to see remotes that we have
+
+git push -u <alias to url> master  :   it publishes our project to the github account of us. we are actually pushing a branch to 										   the github account
+
+
+
+
+ 
+
+
+

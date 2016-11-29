@@ -1,0 +1,152 @@
+                             SOME COMMON AND IMPORTANT COMMANDS IN BASH 
+
+
+ pwd which stands for Print Working Directory:   IT tells us the current directory we are working upon
+ ls  :  it stands for the list and gives us the list what is in the current location
+ ~ (tilde) - This is a shortcut for your home directory.
+ . (dot) - This is a reference to your current directory.
+ /(slash) - This actually denotes the root directory.
+ .. (dotdot)- This is a reference to the parent directory.and it directs us to the orevious directory
+ cd -  it stands for change directory is used to go from one directoryto other.
+ 			**If you run the command cd without any arguments then it will always take you back to your home directory.
+
+ file [path]  :  it is actually to know what kind of the given file is.
+ Linux is actually a case sensitive language
+ If there is a space in the name of the file we must be very careful. There are two ways in which we can resolve this problem 
+ 	1.By specifying the name in the quotes 
+ 	2.or by just using the (\ ) escape character in place of the space 
+
+A hidden file is a file whose name begins with a.(fullstop) by using the same we can identify hidden files and create them.
+ls by default do not show hidden files but we can make modification to get a list of hidden files also. it is done by using ls -a
+
+man <command to look up>  it gives the details about the commands that we write in the arguments
+man -k <search term>
+    Do a keyword search for all manual pages containing the given search term.
+
+/<term>
+    Within a manual page, perform a search for 'term'
+n
+    After performing a search within a manual page, select the next found item.
+
+
+mkdir stands for make directory
+	mkdir [options] <Directory>
+	  [options are not mandatory]  if we directly put the name of the folder it will create the directory in the current directory where we 
+    are now if the full path along with nameof directiory is given it will be an absolute way of creating the directory.
+
+	  mkdir can be used with some option
+	  -p  :  it tells mkdir to make parent directories as needed   
+	  		ex: mkdir -p linuxtutorialwork/foo/bar
+	  -v  :  it makes mkdir tells us what we are doing or what operations are being performed
+	  		ex:  mkdir -pv linuxtutorialwork/foo/bar
+			mkdir: created directory 'linuxtutorialwork/foo'
+			mkdir: created directory 'linuxtutorialwork/foo/bar'
+
+there is no undo feature in the linux command line like gui
+ 
+Removing a DIRECTORY
+  rmdir [options] <Directory>
+   -p and -v options are same as in mkdir. only those directory can be removed that are empty
+  for removing those directory that are non empty rm [options] <directory> where for removing the files no options are required but for 
+  removing the directories the option -r is required
+
+ touch [options] <filename>
+   it helps us to create a new blank file
+
+Copying a file or a directory
+cp [options] <source> <destination>
+both the source and the destination are paths 
+When we use cp the destination can be a path to either a file or directory. If it is to a file then it will create a copy of the source but
+name the copy the filename specified in destination. If we provide a directory as the destination then it will copy the file into that 
+directory and the copy will have the same name as the source.
+
+Moving a file into the directory
+  mv [options] <source> <destination>
+  it is similar to that of cp but the only difference is we need not to use the -r option
+  we can effectively use the move tool to rename a file by moving it to the same directory but with a different name
+
+
+vi is a command line text editor we access it by using the command     vi <filename>
+for going to insert mode we use i and then returning to the edit mode we use Esc
+in the bottommost corner of the of the command line if you are seeing INSERT then you are in insert mode otherwise you are in edit mode
+   
+    ZZ (Note: capitals) - Save and exit
+    :q! - discard all changes, since the last save, and exit
+    :w - save file but don't exit
+    :wq - again, save and exit
+we can read a file with vi <file name > or by using    cat <filename>   where cat stands for concatenate
+for the files having large contents we use   less <file>
+if you type :set nu       in edit mode within vi it will enable line numbers. 
+in vi u: undoing last action 
+      U: undoing all changes done in the current line
+
+
+<Ctrl> + c  and <Ctrl> + z are the universal signal for Cancel in Linux.Where Ctrl+z is more powerful
+
+Wild cards in linux command line 
+    * - represents zero or more characters
+    ? - represents a single character
+    [] - represents a range of characters
+    wild cards can be used anywhere while determining the path
+
+
+Three option can be available with any file thesee are
+    
+    r read - you may view the contents of the file.
+    w write - you may change the contents of the file.
+    x execute - you may execute or run the file if it is a program or script.
+
+To view the permission of the file we can use the command :   ls -l [path]
+			ls -l /home/ryan/linuxtutorialwork/frog.png
+            -rwxr----x 1 harry users 2.7K Jan 4 07:32 /home/ryan/linuxtutorialwork/frog.png
+
+the first character - denotes wheather its a file or a directory - denotes a file and d denotes a directory
+then the next three characters represent the permisssion for owner (-) denotes the absence of the permission finally the last three character represents the permission for others.
+
+To change the permission for a file or a directory we use the cimmand 
+		chmod [permissions] [path]
+		in permission we first write for whom user-u group-g others-o all-a
+		then +or- + for adding a permission and - for revoking
+While doing the same thing with directories we have to add a -d also along with -l so we basically use -ld
+
+FILTERS
+   
+using them head [-no of lines to print][path]
+head
+    View the first n lines of data.
+tail
+    View the last n lines of data.
+sort
+    Organise the data into order.
+nl
+    Print line numbers before data.
+wc
+    Print a count of lines, words and characters.
+cut
+    Cut the data into fields and only display the specified fields.
+sed
+    Do a search and replace on the data.
+uniq
+    Remove duplicate lines.
+tac
+    Print the data in reverse order.
+
+MY ALIASES
+	alias c='clear'
+alias reboot='sudo reboot'
+alias upgrade='sudo apt-get upgrade'
+alias update='sudo apt-get update'
+alias ls='ls --color=auto'
+alias ll='ls -la' 
+alias l.='ls -d .* --color=auto'
+alias go='xdg-open'	
+alias browser='google-chrome'
+alias off='sudo poweroff'
+
+PROCESS MANAGEMENT :
+
+
+for going to command line from the gui interface we use <Ctrl+alt+F1>  for returning back to the GUI we use <Ctrl+alt+F7> 
+
+for opening a file user predefined or default application we use the command 
+xdg-open $file

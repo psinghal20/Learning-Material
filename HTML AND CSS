@@ -1,0 +1,131 @@
+Basic html and css is in the copy :P
+
+OVERFLOW:
+    It comes into play when we set the height less than what the content takes.
+    It can have four values
+      1. visible :  The content actually extends outside the box and is visible.Content outside the box wont push other content down .
+
+      2. Hidden  :   It is hust oppisote of the visible content extending beyond the box are completely hidden.
+
+      3. Scroll :    It will hide the content from going out of the box but rather will add a scrollbar for the same. And the scrollbar will be both for horizontal and vertical scroll even if we dont need it.
+
+     4. Auto :   It is wuite similar to scroll but it gives overflow only the scrollbar that the box actully needs sometomes even no scroll. 
+
+
+Including the fancy fonts :
+   Fancy fonts dont come in builtin the user need to have those fonts i n their operating system in order to use them in their webpage. For this we need to include i font library. GOOGLE FONT API is one such service from where we can embeed vorious fonts into our webpage. For using this forst we need to include this line into our html file that is :     
+   <link href="http://fonts.googleapis.com/css?family=FONTNAME" rel="stylesheet" type="text/css" />
+
+   Wherein in the place of FONTNAME you have to put the nme of the font that you are going tto use.
+   	For the availability of the fonts you can visit the website   :  https://fonts.google.com
+
+
+FLOAT  :
+   Float is a css positioning property. It is actuallly used to create a complete weblayouts.
+Float is most famously used with the property clear. An element that has a clear property set up  will not move adjecent as the float likes it to be rather it moves itself down past the float.
+CLEAR  has four valid values which are both left right none.  
+
+ALIGN:
+   Aligning elements in css :
+   1.  Ceter Align elements :  to horizontally align block elements like div image we use the property margin:auto;
+
+SELECTORS :
+Selectors are what allows you to target specific HTML elements and apply style to them. There can be many type of selectors in the css like class id..etc. Among all of these the most powerful is id it overrides all other styles.We can also select a commbination of these selectors using combinators.
+   1.Descendent selectors:
+        eg div p{}   the following selects all the paragrapgs inside the div container.
+
+   2.Child Selector :
+   		eg  div>p{} the given example selects all the <p> that are the immedaite children of the div elements.
+   		Actully they both are a kind of similar but the diff id this that Descendent selector selects all the elements even in the nested structure but child selector do not.
+
+   3.Adjecent sibling selector:
+   		It selects the element that is adjecent sibling of specified elements
+   		eg   div+p{}   selects only the <p> that is just after the div elemnt.
+
+   	4.General sibling selector:
+   		eg   div~p{}   selects all the p that are the sibling of div element .
+
+
+PSEUDO CLASSES  :
+  A  pseudo class is used to define a special state of an element . basic syntax of a pseudo class is  
+  selector:pseudo-class {
+    property:value;
+}
+a pseudo class can be combined with css class.
+The :first-child pseudo-class matches a specified element that is the first child of another element.
+eg:  p i:first-child {
+    color: blue;
+}
+This will match the first i element in the all <p>
+
+PSEUDO ELEMENT:
+   the pseudo element and the pseudo class differ in their usage in which pseudo class is used with single colon and pseudo element is used with double colon.
+   
+* {
+margin: 0;
+padding: 0;
+}
+This actually removes all the browser default margins and paddings as well giving the developer a nice clean state to work upon.
+
+**Difference bw Inline and inline block
+     Elements with display:inline-block are like display:inline elements, but they can have a width and a height. That means that you can use an inline-block element as a block while flowing it within text or other elements.
+
+
+position in CSS:
+positioning in css can have five values these are 
+1. static:  this is actually the default value of the position what it does that it makes the element in the normal flow of the document.
+2. inherit   :  this inherits the positioning value from its parent element 
+3. relative   :  in relative positioning the elements creates a hole in its place which remains in flow of the document and the actual element can be paaced anywhere wrt to this hole by moving it using right,left,top values
+
+positioning elements always placed over non positioned elements whenever they overlap
+
+#in css we can also have multiple background images that can be seperate by comma where the first image is closest to the viewer
+
+the background-size property can have two values other than the predefined size these are contain and cover
+The contain keyword scales the background image to be as large as possible (but both its width and its height must fit inside the content area). As such, depending on the proportions of the background image and the background positioning area, there may be some areas of the background which are not covered by the background image.
+
+The cover keyword scales the background image so that the content area is completely covered by the background image (both its width and height are equal to or exceed the content area). As such, some parts of the background image may not be visible in the background positioning area.
+
+FLEX-BOX :
+   For using flexbox we first create a element of display type flex and then each of the element that comes inside this element is a flex items. we can then control them using the flex properties.
+
+block level elemnt takes up full length by default.
+flex item stack left to right in the container according to their minimum width. 
+flex-direction  :  it defines the directions of the flexible items inside the flex container the default value is row(left to right and top to bottom) other values are  
+	1.row-reverse flex items will be laid down from right to left
+	2.column  :  flex items will be laid out vertically
+	3.column-reverse   :  flex items will be laid from bottom to the top
+
+flex-grow  :  it is applied to each and every flex element and defines the rate of growth to take up the complete space in the container.and only that flex item grows to which the flex-growth property is applied the rest remains same.
+
+flex-shrink  :  it defines the rate at which the flex item shrinks when the size of the browser window is reduced
+
+flex-wrap  : this property is applied to the flex-container. this property specifies wheather or not the flex item should wrap when there is not enough room for the flex items in the flex line. Possible values are
+	1. nowrap : default behaviour the flexible items will not wrap it would rather create a scroll bar in the page
+	2. wrap  :  The flexible items will wrap if necessery
+	3. wrap-reverse  :  the flexible items will wrap but in the reverse direction
+
+flex-basis  :  it is just like min width it will define the starting point for the flex-items ar more basically defines a staerting width.
+    the difference between min-width and flex-basis is this that when there is not enough romm for the min-width flex item it will create a scroll bar where is in flex-basis the scroll bar will not be added rather the flex item will only take up the space that is available to it
+	the flex-basis property is actually applied to the flex-items
+
+justify-content  :
+	it aligns the flexible container items when the items do not use all the available space on the main-axis. it can have the following values
+	1. flex-start  :  default value. items are positioned in the begenning of the container
+	2. flex-end  :  aligns the flex items to the other side
+	3. center : items are positioned at the center of the container
+	4. space-between :  items are positioned with all the remaining space equally distributed between them 
+	5. space-around  :  divides the remaining space equally among all the flex-items and then divides the space given to each around them equally.
+justify content property works along the main axis and not along the cross-axis. we can change the axises using the flex-flow property that works in the same manner as the flex-direction.
+
+align-content :
+     it works in the same manner as justify-content but the only difference is this that it actually works along the cross axis and not along the main-axis
+
+background-attachment :  ;  
+	this property allows to style the behaviour of the background with respect to the rest of the page
+	it can have the following values :
+		scroll :	The background scrolls along with the element. This is default
+		fixed : 	The background is fixed with regard to the viewport
+		local	 :  The background scrolls along with the element's contents
+		initial : 	Sets this property to its default value.
+		inherit	:   Inherits this property from its parent element.

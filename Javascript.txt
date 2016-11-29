@@ -1,0 +1,68 @@
+Javascript can be writterned either within the html document inside the body or head tag or using an external Javascript file. inside the html file it can be included in a tag <script> that can be placed either inside the head tag or the boody tag.
+Javascript can be writterned in the console option of the devloper tools.
+
+console.log(a);  :  simply displays the value of a in the console output
+	in this log is function() and console is the object to access the log
+we can also create the output using the alert eg.   alert(b);
+	it actually will not display the output in the console but rather will give an aleart stating the output.
+
+for input of a value we use the function()   :  prompt();
+	eg. a=prompt("Please tell me your age");
+
+we can have various operators just like in any other programming language that include arithmetic operators(+,/,*,-) assignment operators, realational operators, increment or decrement operators etc.
+	== : loose-equal
+	=== : strict-equal
+
+##if we have a no and we want to print it on the screen we need to convert it to string and in javascript we call this conversion coercion.
+  javascript provides several facilities for forcibly coercing between types
+  	eg:  var a="42";
+  		 var b=Number(a);
+  	it is an example of explicit coercion
+  	eg: a="99" b=99
+  		a==b; == is loose equals so in this case javascript will automatically convert a to its no equivilent this is known as implicit coercion
+
+  //Single line comments
+  /* multiple line comments */
+
+  javascript uses dynamic typing approach that is a variable can hold any type of value be it number or a string 
+
+toFixed();  :  it is a function that is used with numbers. toFixed(..) lets us specify how many decimal places we'd like the number rounded to, and it produces the string as necessary.
+for making a variable constant we can use the keyword const
+{ }; the two curly braces defines a block
+
+conditional statements such as if-else and LOOPING statements such as for while or do-while are same as in any other programming language
+function is a keyword that defines a set of statements that can be accessed by a single name
+
+typeof:
+
+	javascript does not have typed variables rather it has typed values some of the built in types are string number boolean null object symbol.
+	javascript provides a builtin operators   typeof    that can examine a value and tell you what type is it.
+		 the typeof operator actally return a string value
+	 	a = null;
+	 	typeof a;  //the above code returns "object" and it is a long standing bug in javascript
+		var a; and var a=undefined; are actually one in the same thing.
+	object :   var k={a:"",b: };
+			   typeof k;
+			   this on running in the console will yields object as an output
+			   we can access a,b using k by the following two methods these are k.a; and k["a"];
+			   the brackett notation becomes necessery when we deal with the special characters
+
+Array:
+    An array is an object that holds values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions.
+  eg:  var arr = [
+    "hello world",
+    42,
+    true
+	];
+	now in js the indexing or counting of almost everything starts from 0
+	arr[0]; //"hello world"
+	arr.length; gives the length of the array
+	for typeof arr; the output yields object
+The best and most natural approach is to use arrays for numerically positioned values and use objects for named properties.
+
+function f(){return 42;}
+typeof f; 		// "function"
+typeof f();     // "number"
+
+a.length;   gives the length of the string a 
+a.toUpperCase();    will convert the the string to the upper case

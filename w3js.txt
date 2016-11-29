@@ -1,0 +1,89 @@
+in html the javascript portion is writterned in the <script></script> tags that can be placed inside the <>body or the <head>section.
+while using the internal scripting the scripts are generally placed at the bottom of the <body> element as due to the compilation of the script the loading of the page may slow down.
+
+javascript can also be placed in the external files the extension of these files are .js
+and these scripts can be included in the html documents by using the src of the file in the script tag
+
+external scripts cannot contain script tags 
+
+javascript can have a various display properties that actually include
+window.alert() :  for writing into an alert box.
+document.write() :    it simply writes into a html page
+		using document.write() after the webpage is fully loaded will delete all the existing html elements
+
+innerHTML :  it actually defines the Html element content
+console.log()  :  is used to display to the console
+
+variables:
+	in js the declearation of the variable need not to have the datatype of the variable and is decleared by keyword var;
+
+comments:
+	single line //
+	multiple lines  /*  */
+
+js is a case sensitive language
+when seperated by semicolons multiple statements in one line are allowed
+js ignores whitespaces
+in a good code all the variables are decleared at the begeening of the script.
+on redeclearing the  javascript variable the varibles does not actually loses its value.
+If we put a number in quotes while declearing, the rest of the numbers will be treated as strings, and concatenated.  var x = "5" + 2 + 3;
+var x = 2 + 3 + "5";  in this case first 2+3 will be executed and then it will be concatenated as the string .
+or in a more simple way we can say that if we add a number and a string the result will be a string.
+typeof  :	 the function return the type of the variable.
+
+OPERATER PRECEDENCE TABLE :
+http://www.w3schools.com/js/js_arithmetic.asp
+js have dynamic datatypes means that a single variables can store different datatypes
+strings can be decleared by single or double quotes we can use one quote inside the other only if they are not same.
+for all the numberes js have the same data type that is Number
+
+
+js array can be writterned with square brackets
+js objects is writterned with curly braces
+The typeof operator returns "object" for arrays because in JavaScript arrays are objects.
+in js a variable without a value is undefined and thus gives the output undefined with the typeof operators.
+for emptying a variable we define it as undefined.
+typeof null is object!!
+
+js objects
+		we can access js ibject oproperties in two ways
+		objectName.propertyName
+		objectName["propertyName"]
+ 	similarly this can be done for methods
+
+ When a JavaScript variable is declared with the keyword "new", the variable is created as an object:
+ 	eg.var x = new String();
+ 		in this case x is decleared as a String object
+
+ These object actually slow down the execution speed
+ if we assign a value to a variable without declearing it then automatically becomes a global variable
+ Local variables are deleted when the function is completed.
+
+ Global variables are deleted when you close the page.
+
+ JAVASCRIPT events:
+ 	 Html events are the things that happens to html elements. js can react on these events.
+
+whenever a event occurs in html js can let us do smething when the event was detected.
+<some-HTML-element some-event='some JavaScript'>
+like onclick is an event and calling a function when this event occurs is what js do
+some of the events in html is
+onchange	An HTML element has been changed
+onclick	The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	The browser has finished loading the page
+
+JS strings:
+	The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string:
+
+	The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:
+
+both of these function returns a value -1 when the given dtring is not found.
+ 
+similar function to indexOf() is search()
+
+
+
+
